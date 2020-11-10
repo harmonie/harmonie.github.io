@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terminal de Harmonie</title>
+    <link>/</link>
+    <description>Recent content on Terminal de Harmonie</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Créer une to-do list avec Flask</title>
+      <link>/posts/todo_flask/</link>
+      <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/todo_flask/</guid>
+      <description>Coming soon </description>
+    </item>
+    
+    <item>
+      <title>À propos</title>
+      <link>/a_propos/</link>
+      <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/a_propos/</guid>
+      <description>Coucou toi Je m&amp;rsquo;appelle Harmonie (c&amp;rsquo;est mon nom 😋), bienvenue à mon émissio.. Ah nan coupé !
+Si tu as la référence à mon introduction t&amp;rsquo;es un/une vrai(e) et tu as droit à un cookie 🍪
+Ici j&amp;rsquo;essaie des trucs tournant autour de la programmation, plus précisemment du développement web ou du TAL (traitement automatique des langues).
+Allez, embarque avec moi dans cette nouvelle aventure ! 🚀</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>/posts/helloworld/</link>
+      <pubDate>Tue, 03 Nov 2020 10:54:42 +0100</pubDate>
+      
+      <guid>/posts/helloworld/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
