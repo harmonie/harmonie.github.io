@@ -6,26 +6,27 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Coming soon " />
+<meta name="description" content="Il faut bien commencer quelque part ! Dans ce tuto, je vous montre comment j&amp;rsquo;ai construit une petite application pour une To-do list avec Flask. Rien de bien révolutionnaire, il y en a des tonnes sur le vaste internet mais voici le mien.
+Flask est un framework (microframework pour être exacte) en Python avec une prise en main assez facile. Fun fact : Flask est utilisé dans Pinterest et LinkedIn &amp;ndash; donc plein de possibilités pour ceux qui commencent comme moi dans le développement web !" />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
-<link rel="canonical" href="/posts/todo_flask/" />
+<link rel="canonical" href="https://harmonie.github.io/posts/todo_flask/" />
 
 
 
 
-<link rel="stylesheet" href="/assets/style.css">
+<link rel="stylesheet" href="https://harmonie.github.io/assets/style.css">
 
-  <link rel="stylesheet" href="/assets/red.css">
-
-
+  <link rel="stylesheet" href="https://harmonie.github.io/assets/red.css">
 
 
 
 
-<link rel="apple-touch-icon" href="/img/apple-touch-icon-192x192.png">
 
-  <link rel="shortcut icon" href="/img/favicon/red.png">
+
+<link rel="apple-touch-icon" href="https://harmonie.github.io/img/apple-touch-icon-192x192.png">
+
+  <link rel="shortcut icon" href="https://harmonie.github.io/img/favicon/red.png">
 
 
 
@@ -41,12 +42,12 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Créer une to-do list avec Flask">
-<meta property="og:description" content="Coming soon " />
-<meta property="og:url" content="/posts/todo_flask/" />
+<meta property="og:description" content="Flask est un framework (microframework pour être exacte) en Python avec une prise en main assez facile. Fun fact : Flask est utilisé dans Pinterest et LinkedIn -- donc plein de possibilités pour ceux qui commencent comme moi dans le développement web" />
+<meta property="og:url" content="https://harmonie.github.io/posts/todo_flask/" />
 <meta property="og:site_name" content="Terminal de Harmonie" />
 
   
-    <meta property="og:image" content="/img/favicon/red.png">
+    <meta property="og:image" content="https://harmonie.github.io/img/favicon/red.png">
   
 
 <meta property="og:image:width" content="2048">
@@ -117,7 +118,7 @@
     
 <div class="post">
   <h1 class="post-title">
-    <a href="/posts/todo_flask/">Créer une to-do list avec Flask</a></h1>
+    <a href="https://harmonie.github.io/posts/todo_flask/">Créer une to-do list avec Flask</a></h1>
   <div class="post-meta">
     
       <span class="post-date">
@@ -136,7 +137,202 @@
   
 
   <div class="post-content"><div>
-        <h1 id="coming-soon">Coming soon<a href="#coming-soon" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+        <h1 id="il-faut-bien-commencer-quelque-part-">Il faut bien commencer quelque part !<a href="#il-faut-bien-commencer-quelque-part-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h1>
+<p>Dans ce tuto, je vous montre comment j&rsquo;ai construit une petite application pour une To-do list avec Flask.
+Rien de bien révolutionnaire, il y en a des tonnes sur le vaste internet mais voici le mien.</p>
+<p>Flask est un framework (microframework pour être exacte) en Python avec une prise en main assez facile.
+Fun fact : Flask est utilisé dans Pinterest et LinkedIn &ndash; donc plein de possibilités pour ceux qui commencent comme moi dans le développement web !</p>
+<h4 id="prérequis">Prérequis<a href="#prérequis" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p><em>First things first</em></p>
+<ol>
+<li>Bien évidemment, on a besoin de Python &ndash; idéalement dernière version en date (j&rsquo;utilise la 3.9)</li>
+<li>Il faut également installer Flask avec <code>pip3 install Flask</code></li>
+<li>PyCharm Community IDE parce que c&rsquo;est le meilleur éditeur de code <em>ever</em> (et il est gratuiiiit 🥺 #teamPyCharm)</li>
+<li>Dans l&rsquo;hypothèse que vous ayez fait le choix de PyCharm, créez maintenant un projet &ndash; j&rsquo;ai appelé le mien <code>todo_flask</code>.</li>
+</ol>
+<blockquote>
+<p>N&rsquo;utilsez pas <code>flask</code> comme nom de projet parce qu&rsquo;il aura des conflits avec le module Flask que vous venez d&rsquo;installer</p>
+</blockquote>
+<blockquote>
+<p>Si vous n&rsquo;utilisez pas PyCharm il vous faudra un environnement virtuel dans un dossier pour y installer Flask</p>
+</blockquote>
+<p>Ouvrons notre éditeur préféré et créons un nouveau projet. J&rsquo;utilise Pycharm et donc toutes les problématiques d&rsquo;installation du framework et d&rsquo;environnement virtuel (j&rsquo;adore), mais vous pouvez toujours passer par le bon vieux terminal.</p>
+<h4 id="hello-world">Hello World<a href="#hello-world" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>On va commencer par afficher <code>Hello World</code> dans notre navigateur pour voir si notre setup marche !</p>
+<p>Dans notre dossier <code>todo_flask</code>, on va créer un fichier <code>app.py</code> dans laquelle on va créer une première methode :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># app.py</span>
+
+<span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask           <span style="color:#75715e"># import de flask</span>
+app <span style="color:#f92672">=</span> Flask(__name__)             <span style="color:#75715e"># création de notre app, c&#39;est une instance de la classe Flask</span>
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>)                   <span style="color:#75715e"># après le end point /</span>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hello</span>():                      <span style="color:#75715e"># appeler la méthode hello</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hello World!&#34;</span>         <span style="color:#75715e"># qui renvoie &#34;hello world&#34;</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:        <span style="color:#75715e"># en lançant app.py</span>
+    app<span style="color:#f92672">.</span>run()                     <span style="color:#75715e"># lancer notre app Flask</span>
+</code></pre></div><p>Il n&rsquo;y a plus qu&rsquo;a lancer notre application !</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">python3 app<span style="color:#f92672">.</span>py
+</code></pre></div><p><img src="/posts/images/running_app.png" alt="app.py"></p>
+<p>Flask lance par défaut un serveur sur le port 5000.
+En cliquant sur le lien dans le terminal :</p>
+<p><img src="/posts/images/helloworld.png" alt="Hello World affiché dans le navigateur"></p>
+<p>Ta-da !</p>
+<p>Nous pouvons maintenant nous lancer dans le vif du sujet</p>
+<h4 id="spécifications">Spécifications<a href="#spécifications" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Pour commencer, les actions qu&rsquo;on pourra faire avec notre app seront assez sommaires. On veut pouvoir :</p>
+<ul>
+<li>créer un élément</li>
+<li>effacer l&rsquo;élément</li>
+<li>marquer un élément comme <em>done</em></li>
+</ul>
+<p>Lors de la création du todo, on va lui donner les champs suivants : <code>Title</code>, <code>Description</code>, <code>CreatedOn</code>, <code>DueDate</code>
+Un élément supprimé aura lui le flag <code>_is_deleted</code>. En gros on <em>soft delete</em> seulement l&rsquo;élément dans la base.
+Enfin, un élément déjà accompli aura le flag <code>_is_done</code>.</p>
+<h4 id="comment-traduire-nos-spécifications-dans-notre-base-de-données-">Comment traduire nos spécifications dans notre base de données ?<a href="#comment-traduire-nos-spécifications-dans-notre-base-de-données-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Nous allons utiliser SQLite pour créer notre base de données. SQLite est une base de données relationelle, ce qui veut dire que nos données seront enregistrées sous la forme de tables.</p>
+<p>On a tout d&rsquo;abord besoin d&rsquo;une table qui va contenir les ToDo créées par les utilisateurs.
+Cette table ressemble à ça :</p>
+<pre><code>ToDo_Elts 
+- Id                 Clé primaire
+— Title              Text
+- Description        Text  
+- CreatedOn          Date
+- DueDate            Date
+- _is_deleted        Booléen
+- _is_done           Booléen
+</code></pre><p>On peut s&rsquo;arrêter là si on créé l&rsquo;application pour un seul utilisateur, mais dans notre cas, on veut que plusieurs utilisateurs puissent créer des taches dans leurs ToDo list respectives. Il nous faut donc une table qui enregistre les données des utilisateurs :</p>
+<pre><code>User
+- Name            Text
+- Email           Email
+- Id              Clé principale
+</code></pre><p>Pour associer les différents utilisateurs à leur ToDo, dans la première table on rajoute :</p>
+<pre><code>ToDo_Elts
+...
+...
+- CreatedBy      Clé étrangère (Id User)
+</code></pre><h4 id="structure-du-code">Structure du code<a href="#structure-du-code" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>On va diviser notre code en 3 parties, pour séparer le code métier de la couche visualisation et des données :</p>
+<ol>
+<li>app.py - point d&rsquo;entrée et de sortie de notre app</li>
+<li>service.py - converti la requête en un réponse</li>
+<li>models.py - gère tout ce qui a attrait à la base de donnée</li>
+</ol>
+<h4 id="commençons-par-créer-les-tables-de-notre-bdd-avec-sqlite3">Commençons par créer les tables de notre BDD avec SQLite3<a href="#commençons-par-créer-les-tables-de-notre-bdd-avec-sqlite3" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Notre fichier <code>models.py</code> consistera de 2 parties :</p>
+<ul>
+<li>Une classe &lsquo;Schema&rsquo; où toutes nos tables en base de données seront créées</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#models.py</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Schema</span>:
+    <span style="color:#66d9ef">def</span> __init__(self):
+        self<span style="color:#f92672">.</span>conn <span style="color:#f92672">=</span> sqlite3<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#39;todo.db&#39;</span>)
+        self<span style="color:#f92672">.</span>create_user_table()
+        self<span style="color:#f92672">.</span>create_to_do_table()
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_to_do_table</span>(self):
+        query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">            CREATE TABLE IF NOT EXISTS &#34;Todo&#34; (
+</span><span style="color:#e6db74">              id INTEGER PRIMARY KEY,
+</span><span style="color:#e6db74">              Title TEXT,
+</span><span style="color:#e6db74">              Description TEXT,
+</span><span style="color:#e6db74">              _is_done boolean,
+</span><span style="color:#e6db74">              _is_deleted boolean DEFAULT 0,
+</span><span style="color:#e6db74">              CreatedOn Date DEFAULT CURRENT_DATE,
+</span><span style="color:#e6db74">              DueDate Date,
+</span><span style="color:#e6db74">              UserId INTEGER FOREIGNKEY REFERENCES User(_id)
+</span><span style="color:#e6db74">            );
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        self<span style="color:#f92672">.</span>conn<span style="color:#f92672">.</span>execute(query)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_user_table</span>(self):
+        query <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">            CREATE TABLE IF NOT EXISTS &#34;User&#34; (
+</span><span style="color:#e6db74">              _id INTEGER PRIMARY KEY,
+</span><span style="color:#e6db74">              Name TEXT,
+</span><span style="color:#e6db74">              Email TEXT
+</span><span style="color:#e6db74">            );
+</span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+        self<span style="color:#f92672">.</span>conn<span style="color:#f92672">.</span>execute(query)
+</code></pre></div><p>Ces tables doivent être créées AVANT le lancement de notre app, donc la classe <code>Schema</code> doit être lancée avant la commande <code>app.run</code> de notre fichier <code>app.py</code> comme ceci :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#app.py</span>
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;__main__&#34;</span>:
+    Schema()
+    app<span style="color:#f92672">.</span>run(debug<span style="color:#f92672">=</span>True)
+</code></pre></div><ul>
+<li>Une classe TodoModel - associe les table de la BDD avec des fonctions</li>
+</ul>
+<p>Nous allons créer notre méthode <code>CREATE</code> comme ceci :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ToDoModel</span>:
+    TABLENAME <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Todo&#34;</span>
+
+    <span style="color:#66d9ef">def</span> __init__(self):
+        self<span style="color:#f92672">.</span>conn <span style="color:#f92672">=</span> sqlite3<span style="color:#f92672">.</span>connect(<span style="color:#e6db74">&#39;todo.db&#39;</span>, isolation_level<span style="color:#f92672">=</span>None)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_by_id</span>(self, _id):
+        query <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#34;SELECT id, Title, Description, DueDate, _is_done &#34;</span> \
+                f<span style="color:#e6db74">&#34;from {self.TABLENAME} WHERE _is_deleted != {1} AND id={_id}&#34;</span>
+
+        result <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>conn<span style="color:#f92672">.</span>execute(query)<span style="color:#f92672">.</span>fetchall() <span style="color:#75715e">#fetchall returns list of tuples</span>
+
+        <span style="color:#66d9ef">if</span> len(result) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>:
+            <span style="color:#66d9ef">return</span> None
+        <span style="color:#66d9ef">else</span>:
+            <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>map_db_result(result[<span style="color:#ae81ff">0</span>])
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">map_db_result</span>(self, elt):
+        db_result <span style="color:#f92672">=</span> dict()
+        db_result[<span style="color:#e6db74">&#34;id&#34;</span>] <span style="color:#f92672">=</span> elt[<span style="color:#ae81ff">0</span>]
+        db_result[<span style="color:#e6db74">&#34;Title&#34;</span>] <span style="color:#f92672">=</span> elt[<span style="color:#ae81ff">1</span>]
+        db_result[<span style="color:#e6db74">&#34;Description&#34;</span>] <span style="color:#f92672">=</span> elt[<span style="color:#ae81ff">2</span>]
+        db_result[<span style="color:#e6db74">&#34;DueDate&#34;</span>] <span style="color:#f92672">=</span> elt[<span style="color:#ae81ff">3</span>]
+        db_result[<span style="color:#e6db74">&#34;_is_done&#34;</span>] <span style="color:#f92672">=</span> elt[<span style="color:#ae81ff">4</span>]
+        <span style="color:#66d9ef">print</span>(db_result)
+        <span style="color:#66d9ef">return</span> db_result
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create</span>(self, params):
+        query <span style="color:#f92672">=</span> f<span style="color:#e6db74">&#39;insert into {self.TABLENAME} &#39;</span> \
+                f<span style="color:#e6db74">&#39;(Title, Description, DueDate, UserId) &#39;</span> \
+                f<span style="color:#e6db74">&#39;values (&#34;{params.get(&#34;Title&#34;)}&#34;,&#34;{params.get(&#34;Description&#34;)}&#34;,&#39;</span> \
+                f<span style="color:#e6db74">&#39;&#34;{params.get(&#34;DueDate&#34;)}&#34;,&#34;{params.get(&#34;UserId&#34;)}&#34;)&#39;</span>
+        result <span style="color:#f92672">=</span> self<span style="color:#f92672">.</span>conn<span style="color:#f92672">.</span>execute(query)
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>get_by_id(result<span style="color:#f92672">.</span>lastrowid)
+</code></pre></div><h4 id="la-couche-service">La couche Service<a href="#la-couche-service" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Le ficher <code>service.py</code> ressemble à ça :</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># Service.py</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ToDoService</span>:
+    <span style="color:#66d9ef">def</span> __init__(self):
+        self<span style="color:#f92672">.</span>model <span style="color:#f92672">=</span> ToDoModel()
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create</span>(self, params):
+        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>model<span style="color:#f92672">.</span>create(params)
+</code></pre></div><h4 id="la-vue">La vue<a href="#la-vue" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Les fonctions du fichier <code>app.py</code> forment les points d&rsquo;entrée et de sortie du système.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#app.py</span>
+
+app <span style="color:#f92672">=</span> Flask(__name__)
+
+
+<span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/todo&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">create_todo</span>():
+    <span style="color:#66d9ef">return</span> jsonify(service<span style="color:#f92672">.</span>ToDoService()<span style="color:#f92672">.</span>create(request<span style="color:#f92672">.</span>get_json()))
+</code></pre></div><p>On spécifie donc le type d&rsquo;entrée qu&rsquo;on attend de l&rsquo;utilisateur, ce qu&rsquo;on lui renvoie en retour.</p>
+<h4 id="testons-tout-ça-">Testons tout ça !<a href="#testons-tout-ça-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Une fois que nous avons toutes nos fonctions qui fonctionnent (<em>badum-tss</em>), on peut accéder à notre endpoint et créer quelques éléments dans notre ToDo. On peut bien-sûr construire un front-end (prochain blogpost ?), mais pour le moment je vais vous montrer comment utiliser Insomnia pour consommer notre API.</p>
+<p>Tout d&rsquo;abord, il faut lancer <code>app.py</code>. Normalement il tourne sur le localhost port 5000.</p>
+<p><img src="/posts/images/todo-insomnia.png" alt="Capture d&rsquo;écran insomnia"></p>
+<p>On clique sur le petit <code>+</code>, puis <code>New Request</code>. On lui donne un nom a cette requête et une méthode <code>GET</code>.
+Dans le panneau du milieu tout en haut on met l&rsquo;url de notre port et on écrit notre requête en JSON.
+On clique sur &ldquo;Send&rdquo; et ta-da, la réponse s&rsquo;affiche dans le panneau droit.
+On voit le &ldquo;mon premier todo&rdquo; et quelques info le concernant. Il a l&rsquo;ID 4 parce que j&rsquo;en ai créé 3 autres précédemment.</p>
+<h4 id="débrief">Débrief<a href="#débrief" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
+<p>Pfiou, on l&rsquo;a fait !</p>
+<p>Bien qu&rsquo;assez sommaire, on a créé notre première application avec Flask.</p>
+<p>Tout le code est disponible au repo Git <!-- raw HTML omitted -->ici<!-- raw HTML omitted -->.</p>
+<h3 id="à-bientôt-pour-de-nouvelles-aventures-">À bientôt pour de nouvelles aventures !<a href="#à-bientôt-pour-de-nouvelles-aventures-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h3>
 
       </div></div>
 
@@ -151,7 +347,7 @@
         
         
         <span class="button next">
-            <a href="/posts/helloworld/">
+            <a href="https://harmonie.github.io/posts/helloworld/">
                 <span class="button__text">Hello World</span>
                 <span class="button__icon">→</span>
             </a>
@@ -180,8 +376,8 @@
   </div>
 </footer>
 
-<script src="/assets/main.js"></script>
-<script src="/assets/prism.js"></script>
+<script src="https://harmonie.github.io/assets/main.js"></script>
+<script src="https://harmonie.github.io/assets/prism.js"></script>
 
 
 

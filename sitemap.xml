@@ -3,36 +3,36 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/posts/todo_flask/</loc>
+    <loc>https://harmonie.github.io/posts/todo_flask/</loc>
     <lastmod>2020-11-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/</loc>
+    <loc>https://harmonie.github.io/posts/</loc>
     <lastmod>2020-11-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://harmonie.github.io/</loc>
     <lastmod>2020-11-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/a_propos/</loc>
+    <loc>https://harmonie.github.io/a_propos/</loc>
     <lastmod>2020-11-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/helloworld/</loc>
+    <loc>https://harmonie.github.io/posts/helloworld/</loc>
     <lastmod>2020-11-03T10:54:42+01:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://harmonie.github.io/categories/</loc>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://harmonie.github.io/tags/</loc>
   </url>
   
 </urlset>

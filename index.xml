@@ -2,26 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Terminal de Harmonie</title>
-    <link>/</link>
+    <link>https://harmonie.github.io/</link>
     <description>Recent content on Terminal de Harmonie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://harmonie.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Créer une to-do list avec Flask</title>
-      <link>/posts/todo_flask/</link>
+      <link>https://harmonie.github.io/posts/todo_flask/</link>
       <pubDate>Tue, 10 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/posts/todo_flask/</guid>
-      <description>Coming soon </description>
+      <guid>https://harmonie.github.io/posts/todo_flask/</guid>
+      <description>Il faut bien commencer quelque part ! Dans ce tuto, je vous montre comment j&amp;rsquo;ai construit une petite application pour une To-do list avec Flask. Rien de bien révolutionnaire, il y en a des tonnes sur le vaste internet mais voici le mien.
+Flask est un framework (microframework pour être exacte) en Python avec une prise en main assez facile. Fun fact : Flask est utilisé dans Pinterest et LinkedIn &amp;ndash; donc plein de possibilités pour ceux qui commencent comme moi dans le développement web !</description>
     </item>
     
     <item>
       <title>À propos</title>
-      <link>/a_propos/</link>
+      <link>https://harmonie.github.io/a_propos/</link>
       <pubDate>Mon, 09 Nov 2020 00:00:00 +0000</pubDate>
       
-      <guid>/a_propos/</guid>
+      <guid>https://harmonie.github.io/a_propos/</guid>
       <description>Coucou toi Je m&amp;rsquo;appelle Harmonie (c&amp;rsquo;est mon nom 😋), bienvenue à mon émissio.. Ah nan coupé !
 Si tu as la référence à mon introduction t&amp;rsquo;es un/une vrai(e) et tu as droit à un cookie 🍪
 Ici j&amp;rsquo;essaie des trucs tournant autour de la programmation, plus précisemment du développement web ou du TAL (traitement automatique des langues).
@@ -30,10 +31,10 @@ Allez, embarque avec moi dans cette nouvelle aventure ! 🚀</description>
     
     <item>
       <title>Hello World</title>
-      <link>/posts/helloworld/</link>
+      <link>https://harmonie.github.io/posts/helloworld/</link>
       <pubDate>Tue, 03 Nov 2020 10:54:42 +0100</pubDate>
       
-      <guid>/posts/helloworld/</guid>
+      <guid>https://harmonie.github.io/posts/helloworld/</guid>
       <description></description>
     </item>
     
