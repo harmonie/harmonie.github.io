@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Terminal de Harmonie</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Nov 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://harmonie.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://harmonie.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Classifier des tweets en Python avec Scikit-Learn et Pandas</title>
+      <link>https://harmonie.github.io/posts/polaritweet/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonie.github.io/posts/polaritweet/</guid>
+      <description>Coming soon! </description>
+    </item>
+    
     <item>
       <title>Créer une to-do list avec Flask</title>
       <link>https://harmonie.github.io/posts/todo_flask/</link>
