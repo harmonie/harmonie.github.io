@@ -29,14 +29,5 @@ Ici j&amp;rsquo;essaie des trucs tournant autour de la programmation, plus préc
 Allez, embarque avec moi dans cette nouvelle aventure ! 🚀</description>
     </item>
     
-    <item>
-      <title>Hello World</title>
-      <link>https://harmonie.github.io/posts/helloworld/</link>
-      <pubDate>Tue, 03 Nov 2020 10:54:42 +0100</pubDate>
-      
-      <guid>https://harmonie.github.io/posts/helloworld/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>

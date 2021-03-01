@@ -17,14 +17,5 @@
 Flask est un framework (microframework pour être exacte) en Python avec une prise en main assez facile. Fun fact : Flask est utilisé dans Pinterest et LinkedIn &amp;ndash; donc plein de possibilités pour ceux qui commencent comme moi dans le développement web !</description>
     </item>
     
-    <item>
-      <title>Hello World</title>
-      <link>https://harmonie.github.io/posts/helloworld/</link>
-      <pubDate>Tue, 03 Nov 2020 10:54:42 +0100</pubDate>
-      
-      <guid>https://harmonie.github.io/posts/helloworld/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
