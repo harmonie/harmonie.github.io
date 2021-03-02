@@ -21,7 +21,7 @@ Flask est un framework (microframework pour être exacte) en Python avec une pri
 
 
 
-
+<link rel="stylesheet" href="https://harmonie.github.io/style.css">
 
 
 <link rel="apple-touch-icon" href="https://harmonie.github.io/img/apple-touch-icon-192x192.png">
@@ -156,7 +156,7 @@ Fun fact : Flask est utilisé dans Pinterest et LinkedIn &ndash; donc plein de p
 <blockquote>
 <p>Si vous n&rsquo;utilisez pas PyCharm il vous faudra un environnement virtuel dans un dossier pour y installer Flask</p>
 </blockquote>
-<p>Ouvrons notre éditeur préféré et créons un nouveau projet. J&rsquo;utilise Pycharm et donc toutes les problématiques d&rsquo;installation du framework et d&rsquo;environnement virtuel (j&rsquo;adore), mais vous pouvez toujours passer par le bon vieux terminal.</p>
+<p>Ouvrons notre éditeur préféré et créons un nouveau projet. J&rsquo;utilise Pycharm et donc zéro problématiques d&rsquo;installation du framework ou d&rsquo;environnement virtuel (j&rsquo;adore), mais vous pouvez toujours passer par le bon vieux terminal.</p>
 <h4 id="hello-world">Hello World<a href="#hello-world" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
 <p>On va commencer par afficher <code>Hello World</code> dans notre navigateur pour voir si notre setup marche !</p>
 <p>Dans notre dossier <code>todo_flask</code>, on va créer un fichier <code>app.py</code> dans laquelle on va créer une première methode :</p>
@@ -173,10 +173,10 @@ app <span style="color:#f92672">=</span> Flask(__name__)             <span style
     app<span style="color:#f92672">.</span>run()                     <span style="color:#75715e"># lancer notre app Flask</span>
 </code></pre></div><p>Il n&rsquo;y a plus qu&rsquo;a lancer notre application !</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">python3 app<span style="color:#f92672">.</span>py
-</code></pre></div><p><img src="/posts/images/running_app.png" alt="app.py"></p>
+</code></pre></div><p><img src="/posts/images/running_app.png#center" alt="app.py"></p>
 <p>Flask lance par défaut un serveur sur le port 5000.
 En cliquant sur le lien dans le terminal :</p>
-<p><img src="/posts/images/helloworld.png" alt="Hello World affiché dans le navigateur"></p>
+<p><img src="/posts/images/helloworld.png#center" alt="Hello World affiché dans le navigateur"></p>
 <p>Ta-da !</p>
 <p>Nous pouvons maintenant nous lancer dans le vif du sujet</p>
 <h4 id="spécifications">Spécifications<a href="#spécifications" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
@@ -323,7 +323,7 @@ app <span style="color:#f92672">=</span> Flask(__name__)
 <h4 id="testons-tout-ça-">Testons tout ça !<a href="#testons-tout-ça-" class="hanchor" ariaLabel="Anchor">&#8983;</a> </h4>
 <p>Une fois que nous avons toutes nos fonctions qui fonctionnent (<em>badum-tss</em>), on peut accéder à notre endpoint et créer quelques éléments dans notre ToDo. On peut bien-sûr construire un front-end (prochain blogpost ?), mais pour le moment je vais vous montrer comment utiliser Insomnia pour consommer notre API.</p>
 <p>Tout d&rsquo;abord, il faut lancer <code>app.py</code>. Normalement il tourne sur le localhost port 5000.</p>
-<p><img src="/posts/images/todo-insomnia.png" alt="Capture d&rsquo;écran insomnia"></p>
+<p><img src="/posts/images/todo-insomnia.png#center" alt="Capture d&rsquo;écran insomnia"></p>
 <p>On clique sur le petit <code>+</code>, puis <code>New Request</code>. On lui donne un nom a cette requête et une méthode <code>GET</code>.
 Dans le panneau du milieu tout en haut on met l&rsquo;url de notre port et on écrit notre requête en JSON.
 On clique sur &ldquo;Send&rdquo; et ta-da, la réponse s&rsquo;affiche dans le panneau droit.
